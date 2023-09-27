@@ -66,6 +66,8 @@ class AppSettingsController extends Controller
             $pathfav = $settings->favicon;
         }
 
+        // dd($request->all());
+
         Settings::where('id', '1')
             ->update([
                 'newupdate' => $request['update'],
@@ -81,8 +83,8 @@ class AppSettingsController extends Controller
                 'tawk_to' => strip_tags($request['tawk_to']),
                 'site_address' => $request['site_address'],
                 'welcome_message' => $request->welcome_message,
-                'whatsapp'=> $request->whatsapp,
-                'tido'=> $request->tido,
+                // 'whatsapp'=> $request->whatsapp,
+                // 'tido'=> $request->tido,
             ]);
 
         $moreset = SettingsCont::find(1);

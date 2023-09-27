@@ -87,29 +87,37 @@
         <script src="{{ asset('dash2/libs/flatpickr/dist/flatpickr.min.js') }}"></script>
 
     @show
-@if($settings->tido)
-    <script src="//code.tidio.co/{{$settings->tido}}.js" async></script>
+    @if ($settings->tido)
+        <script src="//code.tidio.co/{{ $settings->tido }}.js" async></script>
     @endif
-    
-    
+
+
     <!-- GetButton.io widget -->
-    @if($settings->whatsapp)
-<script type="text/javascript">
-    (function () {
-        var options = {
-            whatsapp: "{{$settings->whatsapp}}", // WhatsApp number
-            call_to_action: "Message us", // Call to action
-            button_color: "#FF6550", // Color of button
-            position: "left", // Position may be 'right' or 'left'
-        };
-        var proto = 'https:', host = "getbutton.io", url = proto + '//static.' + host;
-        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
-        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
-        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
-    })();
-</script>
-  @endif
-<!-- /GetButton.io widget -->
+    @if ($settings->whatsapp)
+        <script type="text/javascript">
+            (function() {
+                var options = {
+                    whatsapp: "{{ $settings->whatsapp }}", // WhatsApp number
+                    call_to_action: "Message us", // Call to action
+                    button_color: "#FF6550", // Color of button
+                    position: "left", // Position may be 'right' or 'left'
+                };
+                var proto = 'https:',
+                    host = "getbutton.io",
+                    url = proto + '//static.' + host;
+                var s = document.createElement('script');
+                s.type = 'text/javascript';
+                s.async = true;
+                s.src = url + '/widget-send-button/js/init.js';
+                s.onload = function() {
+                    WhWidgetSendButton.init(host, proto, options);
+                };
+                var x = document.getElementsByTagName('script')[0];
+                x.parentNode.insertBefore(s, x);
+            })();
+        </script>
+    @endif
+    <!-- /GetButton.io widget -->
     <script src="{{ asset('dash2/js/scriptfile.js') }}"></script>
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
     </script>
@@ -127,8 +135,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
         integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
     </script>
+
     @livewireScripts
- 
+
 </body>
 
 </html>

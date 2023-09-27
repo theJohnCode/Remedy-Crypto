@@ -278,6 +278,7 @@ class ViewsController extends Controller
         if (Auth::user()->account_verify == 'Verified') {
             abort(404, 'You do not have permission to access this page');
         }
+        
         return view('user.verify', [
             'title' => 'Verify your Account',
         ]);

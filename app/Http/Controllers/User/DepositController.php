@@ -184,10 +184,10 @@ class DepositController extends Controller
         $user = User::where('id', Auth::user()->id)->first();
 
         //Send Email to admin regarding this deposit
-        Mail::to($settings->contact_email)->send(new DepositStatus($dp, $user, 'Successful Deposit', true));
+        // Mail::to($settings->contact_email)->send(new DepositStatus($dp, $user, 'Successful Deposit', true));
 
         //Send confirmation email to user regarding his deposit and it's successful.to get a response back from admin
-        Mail::to($user->email)->send(new DepositStatus($dp, $user, 'Successful Deposit', false));
+        // Mail::to($user->email)->send(new DepositStatus($dp, $user, 'Successful Deposit', false));
 
         // Kill the session variables
         $request->session()->forget('payment_mode');
