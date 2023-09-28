@@ -19,7 +19,7 @@ class User extends Authenticatable implements MustVerifyEmail
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
-   
+
     /**
      * Send the email verification notification.
      *
@@ -33,16 +33,15 @@ class User extends Authenticatable implements MustVerifyEmail
         if ($settings->enable_verification == 'true') {
             $this->notify(new VerifyEmail);
         }
-        
     }
-    
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'l_name', 'email', 'phone','country','password', 'ref_by','status', 'username', 'email_verified_at',
+        'name', 'l_name', 'email', 'phone', 'country', 'password', 'ref_by', 'status', 'username', 'email_verified_at',
     ];
 
     /**
@@ -76,33 +75,37 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
 
-    public function dp(){
-    	return $this->hasMany(Deposit::class, 'user');
+    public function dp()
+    {
+        return $this->hasMany(Deposit::class, 'user');
     }
 
-    public function wd(){
-    	return $this->hasMany(Withdrawal::class, 'user');
+    public function wd()
+    {
+        return $this->hasMany(Withdrawal::class, 'user');
     }
 
-    public function tuser(){
-    	return $this->belongsTo(Admin::class, 'assign_to');
-    }
-    
-    public function dplan(){
-    	return $this->belongsTo(Plans::class, 'plan');
+    public function tuser()
+    {
+        return $this->belongsTo(Admin::class, 'assign_to');
     }
 
-    public function plans(){
-        return $this->hasMany(User_plans::class,'user', 'id');
+    public function dplan()
+    {
+        return $this->belongsTo(Plans::class, 'plan');
+    }
+
+    public function plans()
+    {
+        return $this->hasMany(User_plans::class, 'user', 'id');
     }
 
     public static function search($search): \Illuminate\Database\Eloquent\Builder
     {
         return empty($search) ? static::query()
-        : static::query()->where('id', 'like', '%'.$search.'%')
-        ->orWhere('name', 'like', '%'.$search.'%')
-        ->orWhere('username', 'like', '%'.$search.'%')
-        ->orWhere('email', 'like', '%'.$search.'%');
+            : static::query()->where('id', 'like', '%' . $search . '%')
+            ->orWhere('name', 'like', '%' . $search . '%')
+            ->orWhere('username', 'like', '%' . $search . '%')
+            ->orWhere('email', 'like', '%' . $search . '%');
     }
-	
 }

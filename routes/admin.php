@@ -31,6 +31,7 @@ use App\Http\Controllers\Admin\TradingPaymentController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->group(function () {
+	Route::get('/', [LoginController::class, 'showLoginForm'])->name('adminloginform')->middleware('adminguest');
 	Route::get('remedylogin', [LoginController::class, 'showLoginForm'])->name('adminloginform')->middleware('adminguest');
 	Route::post('login', [LoginController::class, 'adminlogin'])->name('adminlogin');
 	Route::post('logout', [LoginController::class, 'adminlogout'])->name('adminlogout');
