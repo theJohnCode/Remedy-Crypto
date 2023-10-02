@@ -22,7 +22,7 @@
                                 <div class="col-lg-7">
                                     <div class="text-center">
                                         <a href="/">
-                                            <img src="{{ asset('storage/app/public/' . $settings->logo) }}" alt="Logo"
+                                            <img src="{{ asset('storage/' . $settings->logo) }}" alt="Logo"
                                                 class="w-50">
                                         </a>
                                     </div>

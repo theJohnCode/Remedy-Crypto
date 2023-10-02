@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>{{ $settings->site_name }} – Safe investment with {{ $settings->site_name }}</title>
     <meta name="description" content="">
-    <link rel="icon" href="{{ asset('storage/app/public/' . $settings->favicon) }}" type="image/png" />
+    <link rel="icon" href="{{ asset('storage/' . $settings->favicon) }}" type="image/png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="temp/custom/assets/css/app.css">
@@ -54,7 +54,7 @@
                                     <!-- <li><a href="howtobuy">How to buy crypto</a></li> -->
                                 </ul>
                             </nav><a class="header__logo" href="/"><img
-                                    src="{{ asset('storage/app/public/' . $settings->logo) }}" alt=""></a>
+                                    src="{{ asset('storage/' . $settings->logo) }}" alt=""></a>
                             <div class="header__right"> <a class="link-icon" href="statistic">
                                     <svg class="svg-icon">
                                         <use href="assets/icons/sprite.svg#icon-001-profits"></use>
@@ -182,7 +182,7 @@
                 <div class="mega-menu">
                     <div class="container">
                         <div class="mega-menu__top"> <a class="mega-menu__logo" href="/"><img
-                                    src="{{ asset('storage/app/public/photos/' . $settings->logo) }}"
+                                    src="{{ asset('storage/photos/' . $settings->logo) }}"
                                     alt=""></a>
                         </div>
                         <div class="mega-menu__row">

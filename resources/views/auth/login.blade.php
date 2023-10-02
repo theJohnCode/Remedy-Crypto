@@ -20,7 +20,7 @@
                                     <div>
                                         <div class="text-center">
                                             <a href="/">
-                                                <img src="{{ asset('storage/app/public/' . $settings->logo) }}"
+                                                <img src="{{ asset('storage/' . $settings->logo) }}"
                                                     alt="Logo" class="w-50">
                                             </a>
                                         </div>

@@ -66,5 +66,6 @@ class SettingsServiceProvider extends ServiceProvider
             'flutterwave.secretHash' => $settings2->flw_secret_hash,
             'services.telegram-bot-api.token' =>  $settings2->telegram_bot_api,
         ]);
+
     }
 }
